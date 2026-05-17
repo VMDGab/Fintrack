@@ -1,0 +1,21 @@
+.button{
+    height: 48px;
+    width: 190px;
+    border-radius: 8px;
+    background-color: var(--primary);
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+}
+
+.button:hover{
+    background-color: var(--modal-background);
+}
+.button:active{
+    transform: scale(.95);
+}

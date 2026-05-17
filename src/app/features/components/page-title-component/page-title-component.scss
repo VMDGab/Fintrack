@@ -1,0 +1,17 @@
+div{
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+}
+
+.subtitle{
+    color: var(--neutral);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
