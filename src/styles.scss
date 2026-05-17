@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root{
+    --primary-background: #0D1226;
+    --secondary-background: #1B1F3B;
+    --modal-background: #1C1F2E;
+
+    --neutral: #8B8FA8;
+    --text-light: #ffffff;
+
+    --primary: #1a3c6e;
+    --secondary: #1D9E75;
+    --tertiary: #D4537E;
+
+    --family: "Inter";
+}
+
+*{
+    font-family: var(--family);
+    margin: 0;
+}

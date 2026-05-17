@@ -1,0 +1,14 @@
+.title{
+    color: var(--neutral);
+}
+.container{
+    height: 40px;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+.container:hover{
+    background-color: var(--primary);
+}

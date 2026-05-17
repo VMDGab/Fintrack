@@ -1,0 +1,16 @@
+.drawer-container {
+    background-color: var(--secondary-background);
+    width: 256px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:0 16px;
+}
+.routes{
+    gap:16px
+}
+
+img{
+    margin: 32px 0;
+}
