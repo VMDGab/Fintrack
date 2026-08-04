@@ -2,6 +2,15 @@
     <span style="width: 15%;">{{date}}</span>
     <span style="width: 20%;">{{category}}</span>
     <span style="width: 25%;">{{desc}}</span>
-    <span style="width: 20%;">{{type}}</span>
-    <span style="width: 10%;">{{amount}}</span>
+    <div style="width: 20%;">
+        <span [class.expense]="type === 'DESPESA'" [class.benefit]="type === 'BENEFICIO'"
+            [class.income]="type === 'RECEITA'">{{type}}
+        </span>
+    </div>
+
+    <div style="width: 10%;">
+        <span [class.amount]="type === 'RECEITA'">
+            {{amount}}
+        </span>
+    </div>
 </div>

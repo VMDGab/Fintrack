@@ -10,3 +10,27 @@
     background-color: var(--secondary-background);
     border-top: 1px solid var(--line);
 }
+
+.expense{
+    padding: 3.5px 8px;
+    background-color: var(--tertiary50);
+    border-radius: 4px;
+    color: var(--redText) ;
+}
+
+.benefit{
+    padding: 3.5px 8px;
+    background-color: var(--primary50);
+    color: var(--primarysText);
+    border-radius: 4px;
+}
+.income{
+    padding: 3.5px 8px;
+    background-color: var(--secondary50);
+    color: var(--secondaryText);
+    border-radius: 4px;
+}
+
+.amount{
+    color: var(--primarysText);
+}

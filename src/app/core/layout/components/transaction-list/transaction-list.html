@@ -16,4 +16,12 @@
             [amount]="item.amount"
          />
     }
+
+    <div class="list-footer" *ngIf="transactions | async as transactions">
+        <span>Mostrando {{transactions.length}}</span>
+        <div class="options">
+            <app-list-button buttonTitle="Anterior"/>
+            <app-list-button buttonTitle="Próximo"/>
+        </div>
+    </div>
 </div>

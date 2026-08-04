@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
     background-color: var(--modal-background);
     border-radius: 12px;
     border: 1px solid var(--line);
@@ -17,4 +16,24 @@
     color: var(--neutral);
     font-size: 12px;
     font-weight: 500;
+   
+}
+.list-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 24px;
+    color: var(--neutral);
+    font-size: 12px;
+    font-weight: 500;
+    background-color: var(--secondary-background);
+    border-top: 1px solid var(--line);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.options{
+    display: flex;
+    gap: 8px;
 }
