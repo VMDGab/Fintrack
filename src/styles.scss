@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-:root{
+:root {
     --primary-background: #0D1226;
     --secondary-background: #1C1F2E;
     --modal-background: #151823;
@@ -23,9 +23,33 @@
     --tertiary50: #93000a82;
     --tertiaryText: #FFB4AB;
 
-
-
     --family: "Inter";
+
+    /* Auth */
+    --auth-background: #060810;
+    --auth-brand-from: #0d1526;
+    --auth-brand-to: #070a12;
+    --auth-form-background: #08090f;
+
+    --auth-border: rgba(255, 255, 255, 0.08);
+    --auth-border-input: rgba(255, 255, 255, 0.1);
+    --auth-border-focus: rgba(59, 91, 219, 0.6);
+    --auth-border-hover: rgba(255, 255, 255, 0.22);
+
+    --auth-surface: rgba(255, 255, 255, 0.03);
+    --auth-surface-input: rgba(255, 255, 255, 0.02);
+    --auth-surface-hover: rgba(255, 255, 255, 0.04);
+
+    --auth-text-primary: #f5f7fa;
+    --auth-text-secondary: #93a0b4;
+    --auth-text-muted: #5f6b80;
+
+    --auth-accent-blue: #3b5bdb;
+    --auth-accent-blue-light: #4c6ef5;
+
+    --auth-avatar-background: #1c2436;
+
+    --auth-shadow: rgba(0, 0, 0, 0.7);
 }
 
 *{

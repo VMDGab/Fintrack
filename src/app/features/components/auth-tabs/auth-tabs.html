@@ -1,0 +1,19 @@
+<div class="auth-tabs">
+    <button
+      type="button"
+      class="auth-tab"
+      [class.auth-tab--active]="page === 'login'"
+      (click)="navigateTo('login')"
+    >
+      Entrar
+    </button>
+  
+    <button
+      type="button"
+      class="auth-tab"
+      [class.auth-tab--active]="page === 'cadastro'"
+      (click)="navigateTo('cadastro')"
+    >
+      Cadastrar
+    </button>
+  </div>

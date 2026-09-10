@@ -1,1 +1,77 @@
-<p>login works!</p>
+<div class="auth-shell">
+    <div class="auth-card">
+        <aside class="auth-brand">
+            <div class="auth-brand__glow auth-brand__glow--top"></div>
+            <div class="auth-brand__glow auth-brand__glow--bottom"></div>
+
+            <div class="auth-brand__content">
+                <div class="brand-header">
+                    <img src="assets/Brand.svg" />
+                </div>
+
+                <div class="brand-badge">
+                    <span class="brand-badge__dot"></span>
+                    Sua saúde financeira em tempo real
+                </div>
+
+                <h1 class="brand-heading">
+                    Controle patrimonial com inteligência de mercado.
+                </h1>
+
+                <p class="brand-description">
+                    Consolide investimentos, acompanhe indicadores Selic e IPCA, e gerencie
+                    transações diárias com precisão institucional.
+                </p>
+            </div>
+        </aside>
+
+        <section class="auth-form-panel">
+            <app-auth-tabs page="login"/>
+
+            <div class="auth-form-panel__intro">
+                <h2 class="form-heading">Bem-vindo de volta</h2>
+                <p class="form-subheading">Acesse seu painel financeiro para gerenciar seus rendimentos.</p>
+            </div>
+
+            <div class="divider-with-text">
+                <span class="divider-line"></span>
+                <span class="divider-line"></span>
+            </div>
+
+            <form class="auth-form" autocomplete="on">
+                <label class="form-field">
+                    <span class="form-field__label">E-mail corporativo ou pessoal</span>
+                    <app-input
+                        type="email"
+                        name="email"
+                        autocomplete="email"
+                        placeholder="seu.email@exemplo.com"
+                        icon="assets/Email.svg"
+                    />
+                </label>
+                <label class="form-field">
+                    <span class="form-field__label">Senha</span>
+                    <app-input
+                        type="password"
+                        name="password"
+                        autocomplete="current-password"
+                        placeholder="••••••••••••"
+                        icon="assets/Lock.svg"
+                    />
+                </label>
+
+                <label class="checkbox-field">
+                    <input type="checkbox" name="remember" />
+                    <span class="checkbox-field__box" aria-hidden="true"></span>
+                    <span>Manter conectado por 30 dias</span>
+                </label>
+
+                <button class="submit-btn">
+                    Entrar no Fintrack
+                    <img src="assets/ArrowRight.svg" alt="" aria-hidden="true" />
+                </button>
+            </form>
+        </section>
+
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<span class="form-field__input">
+  <img [src]="icon" alt="" aria-hidden="true" />
+  <input
+    [type]="inputType"
+    [name]="name"
+    [placeholder]="placeholder"
+    [autocomplete]="autocomplete"
+  />
+  @if (type === 'password') {
+    <button
+      type="button"
+      class="form-field__toggle"
+      [attr.aria-label]="passwordVisible ? 'Ocultar senha' : 'Mostrar senha'"
+      (click)="togglePassword()"
+    >
+      <img src="assets/Eye.svg" alt="" aria-hidden="true" />
+    </button>
+  }
+</span>

@@ -1,0 +1,32 @@
+.auth-tabs {
+    display: inline-flex;
+    align-self: flex-end;
+    padding: 4px;
+    border-radius: 999px;
+    background: var(--auth-surface);
+    border: 1px solid var(--auth-border);
+    margin-bottom: 40px;
+  }
+  
+  .auth-tab {
+    border: none;
+    background: transparent;
+    color: var(--auth-text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
+  
+    &--active {
+      background: var(--auth-accent-blue);
+      color: var(--text-light);
+    }
+  
+    &:not(&--active):hover {
+      color: var(--auth-text-primary);
+    }
+  }
