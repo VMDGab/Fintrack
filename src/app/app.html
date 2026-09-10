@@ -1,4 +1,6 @@
-<app-drawer-component />
+@if (auth.isLoggedIn()){
+  <app-drawer-component/>
+}
 <div class="content">
-  <router-outlet />
+  <router-outlet/>
 </div>

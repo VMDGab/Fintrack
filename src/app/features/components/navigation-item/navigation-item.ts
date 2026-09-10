@@ -1,5 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import {Router} from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-navigation-item',
   imports: [],
@@ -8,10 +9,18 @@ import {Router} from '@angular/router';
 })
 export class NavigationItem {
 private router = inject(Router)
+private auth = inject(AuthService)
 @Input({required: true}) title!: string;
 @Input({required: true}) routeName!: string;
+@Input() _logout!: boolean
 
 navigateTo(){
   this.router.navigate([this.routeName])
+}
+
+logout(){
+  if(this._logout){
+    this.auth.logout();
+  }
 }
 }
