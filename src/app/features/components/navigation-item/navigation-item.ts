@@ -15,12 +15,10 @@ private auth = inject(AuthService)
 @Input() _logout!: boolean
 
 navigateTo(){
-  this.router.navigate([this.routeName])
-}
-
-logout(){
   if(this._logout){
     this.auth.logout();
   }
+
+  this.router.navigate([this.routeName]);
 }
 }

@@ -1,10 +1,13 @@
 <span class="form-field__input">
   <img [src]="icon" alt="" aria-hidden="true" />
   <input
+    [id]="id"
     [type]="inputType"
     [name]="name"
+    [value]="value"
     [placeholder]="placeholder"
     [autocomplete]="autocomplete"
+    (input)="onValueChange($event)"
   />
   @if (type === 'password') {
     <button

@@ -8,11 +8,11 @@ import { TransactionDTO } from '../core/layout/models/transaction.dto';
 })
 export class TransactionService{
     constructor(
-        private Http: HttpClient
+        private http: HttpClient
     ){}
 
     public getTransaction(){
-        return this.Http.get<TransactionDTO[]>(`${environment.baseURL}/v1/transaction`)
+        return this.http.get<TransactionDTO[]>(`${environment.baseURL}/v1/transaction`)
     }
 }
 

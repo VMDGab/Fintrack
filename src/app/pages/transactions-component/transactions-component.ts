@@ -14,7 +14,6 @@ import { Observable, map } from 'rxjs';
 })
 
 export class TransactionsComponent {
-
   transactionsObject!: Observable<TransactionDTO[]>;
 
   constructor(

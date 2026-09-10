@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -6,11 +6,14 @@ import { Component, Input } from '@angular/core';
   styleUrl: './input.scss',
 })
 export class InputComponent {
+  @Input({ required: true }) id!: string;
   @Input({ required: true }) placeholder!: string;
   @Input({ required: true }) icon!: string;
+  @Input({ required: true }) value = '';
   @Input() type: 'email' | 'password' | 'text' = 'text';
   @Input() name = '';
   @Input() autocomplete = '';
+  @Output() changeValue = new EventEmitter<string>();
 
   passwordVisible = false;
 
@@ -20,5 +23,9 @@ export class InputComponent {
 
   togglePassword(): void {
     this.passwordVisible = !this.passwordVisible;
+  }
+
+  onValueChange(event: Event): void {
+    this.changeValue.emit((event.target as HTMLInputElement).value);
   }
 }

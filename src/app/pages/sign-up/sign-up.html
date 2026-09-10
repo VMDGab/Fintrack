@@ -38,13 +38,16 @@
               <span class="divider-line"></span>
           </div>
 
-          <form class="auth-form" autocomplete="on">
+          <div class="auth-form" autocomplete="on">
               <label class="form-field">
                   <span class="form-field__label">Nome completo</span>
                   <app-input
+                      id="sign-up-full-name"
                       type="text"
                       name="fullName"
                       autocomplete="name"
+                      [value]="username"
+                      (changeValue)="username = $event"
                       placeholder="Seu nome completo"
                       icon="assets/Person.svg"
                   />
@@ -52,9 +55,12 @@
               <label class="form-field">
                   <span class="form-field__label">E-mail corporativo ou pessoal</span>
                   <app-input
+                      id="sign-up-email"
                       type="email"
                       name="email"
                       autocomplete="email"
+                      [value]="email"
+                      (changeValue)="email = $event"
                       placeholder="seu.email@exemplo.com"
                       icon="assets/Email.svg"
                   />
@@ -62,9 +68,12 @@
               <label class="form-field">
                   <span class="form-field__label">Senha</span>
                   <app-input
+                      id="sign-up-password"
                       type="password"
                       name="password"
                       autocomplete="current-password"
+                      [value]="password"
+                      (changeValue)="password = $event"
                       placeholder="••••••••••••"
                       icon="assets/Lock.svg"
                   />
@@ -72,19 +81,22 @@
               <label class="form-field">
                   <span class="form-field__label">Confirmar Senha</span>
                   <app-input
+                      id="sign-up-confirm-password"
                       type="password"
-                      name="password"
+                      name="confirmPassword"
                       autocomplete="current-password"
+                      [value]="confirmPassword"
+                      (changeValue)="confirmPassword = $event"
                       placeholder="••••••••••••"
                       icon="assets/Lock.svg"
                   />
               </label>
 
-              <button class="submit-btn">
-                  Entrar no Fintrack
+              <button class="submit-btn" (click)="register()">
+                  Criar conta no Fintrack
                   <img src="assets/ArrowRight.svg" alt="" aria-hidden="true" />
               </button>
-          </form>
+            </div>
       </section>
 
   </div>

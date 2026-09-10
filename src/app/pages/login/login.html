@@ -38,13 +38,16 @@
                 <span class="divider-line"></span>
             </div>
 
-            <form class="auth-form" autocomplete="on">
+            <form class="auth-form" autocomplete="on" (submit)="login($event)">
                 <label class="form-field">
                     <span class="form-field__label">E-mail corporativo ou pessoal</span>
                     <app-input
+                        id="login-email"
                         type="email"
                         name="email"
                         autocomplete="email"
+                        [value]="email"
+                        (changeValue)="email = $event"
                         placeholder="seu.email@exemplo.com"
                         icon="assets/Email.svg"
                     />
@@ -52,9 +55,12 @@
                 <label class="form-field">
                     <span class="form-field__label">Senha</span>
                     <app-input
+                        id="login-password"
                         type="password"
                         name="password"
                         autocomplete="current-password"
+                        [value]="password"
+                        (changeValue)="password = $event"
                         placeholder="••••••••••••"
                         icon="assets/Lock.svg"
                     />
@@ -66,7 +72,11 @@
                     <span>Manter conectado por 30 dias</span>
                 </label>
 
-                <button class="submit-btn">
+                @if (errorMessage) {
+                    <p class="auth-form__error" role="alert">{{ errorMessage }}</p>
+                }
+
+                <button type="submit" class="submit-btn">
                     Entrar no Fintrack
                     <img src="assets/ArrowRight.svg" alt="" aria-hidden="true" />
                 </button>
