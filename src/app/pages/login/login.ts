@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { AuthTabs } from '../../features/components/auth-tabs/auth-tabs';
 import { InputComponent } from '../../features/components/input/input';
 import { AuthService } from '../../services/auth.service';
-
 @Component({
   selector: 'app-login',
   imports: [AuthTabs, InputComponent],
@@ -23,7 +22,10 @@ export class Login {
     this.errorMessage = '';
 
     this.authService.login(this.email, this.password).subscribe({
-      next: () => this.router.navigate(['home']),
+      next: (response) => {
+        this.router.navigate(['home'])
+        sessionStorage.setItem('user_data', JSON.stringify(response))
+      },
       error: () => {
         this.errorMessage = 'Não foi possível entrar. Verifique suas credenciais.';
       },

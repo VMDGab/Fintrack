@@ -11,8 +11,8 @@ export class TransactionService{
         private http: HttpClient
     ){}
 
-    public getTransaction(){
-        return this.http.get<TransactionDTO[]>(`${environment.baseURL}/v1/transaction`)
+    public getTransaction(id: string){
+        return this.http.get<TransactionDTO[]>(`${environment.baseURL}/v1/transaction/${id}`)
     }
 }
 

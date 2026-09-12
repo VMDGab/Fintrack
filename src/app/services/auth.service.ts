@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
 import { tap } from 'rxjs';
 import { environment } from '../shared/environment';
+import { UserDTO } from '../core/layout/models/user.dto';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -14,7 +15,7 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.http
-      .post(`${environment.baseURL}/v1/user/login`, { email, password })
+      .post<UserDTO>(`${environment.baseURL}/v1/user/login`, { email, password })
       .pipe(tap(() => this._isLoggedIn.set(true)));
   }
 

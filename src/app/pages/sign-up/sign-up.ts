@@ -4,6 +4,7 @@ import { InputComponent } from '../../features/components/input/input';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-sign-up',
  imports: [AuthTabs, InputComponent],
@@ -11,25 +12,27 @@ import { Router } from '@angular/router';
   styleUrl: './sign-up.scss',
 })
 export class SignUp {
-   constructor(
-      private service: AuthService,
-    ) {}
-    private router = inject(Router)
+  private router = inject(Router)
+  private service = inject(AuthService)
 
   username = '';
   email = '';
   password = '';
   confirmPassword = '';
 
+  emailValidation = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   register(): void {
-    this.service.register(this.username, this.email, this.password).subscribe({
-      next: (response) => {
-        this.router.navigate(["home"])
-      },
-      error: (error) => {
-        console.error('Erro ao cadastrar', error);
-      },
-    });
+    if(this.password == this.confirmPassword && this.emailValidation.test(this.email)){
+      this.service.register(this.username, this.email, this.password).subscribe({
+        next: (response) => {
+          this.router.navigate(["home"])
+        },
+        error: (error) => {
+          console.error('Erro ao cadastrar', error);
+        },
+      });
+  }
   }
 
 }

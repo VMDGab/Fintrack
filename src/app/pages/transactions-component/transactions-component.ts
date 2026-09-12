@@ -4,7 +4,8 @@ import { MainButton } from "../../core/layout/components/main-button/main-button
 import { TransactionList } from "../../core/layout/components/transaction-list/transaction-list";
 import { TransactionService } from "../../services/transaction.service";
 import { TransactionDTO } from '../../core/layout/models/transaction.dto';
-import { Observable, map } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
+import { UserDTO } from '../../core/layout/models/user.dto';
 
 @Component({
   selector: 'app-transactions-component',
@@ -20,12 +21,25 @@ export class TransactionsComponent {
     private service: TransactionService
   ) {}
 
-  ngOnInit() {
-   return this.transactionsObject = this.service.getTransaction().pipe(map(transactions => transactions.map(t =>({
-    ...t,
-    amount: this.formatAmount(t.amount)
-   }))))
-}
+  ngOnInit(): void {
+    const storedUser = sessionStorage.getItem('user_data');
+
+    if (!storedUser) {
+      this.transactionsObject = of([]);
+      return;
+    }
+
+    const user: UserDTO = JSON.parse(storedUser);
+
+    this.transactionsObject = this.service.getTransaction(user.user_id).pipe(
+      map((transactions) =>
+        transactions.map((transaction) => ({
+          ...transaction,
+          amount: this.formatAmount(transaction.amount),
+        })),
+      ),
+    );
+  }
   formatAmount(amount: string): string {
     return Number(amount).toLocaleString('pt-BR', {
       style: 'currency',
@@ -33,5 +47,4 @@ export class TransactionsComponent {
     });
   }
 }
-
 
